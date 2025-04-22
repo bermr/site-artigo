@@ -1,0 +1,187 @@
+:root {
+  --cor-primaria: #ab4a37;
+  --cor-secundaria: #b4b3ae;
+  --cor-destaque: #c98d57;
+  --cor-texto: #000000;
+  --cor-fundo: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Aileron", sans-serif;
+  color: var(--cor-texto);
+  background-color: var(--cor-fundo);
+  line-height: 1.6;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--cor-primaria);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+header nav a {
+  color: #FFF;
+}
+
+header img {
+  height: 80px;
+}
+
+nav a {
+  margin-left: 1.5rem;
+  text-decoration: none;
+  color: var(--cor-texto);
+  font-weight: 500;
+}
+
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.hero img {
+  display: block;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.hero a {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--cor-destaque);
+  color: var(--cor-fundo);
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+section {
+  padding: 3rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.servicos {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.servico {
+  padding: 1.5rem;
+  border: 1px solid var(--cor-secundaria);
+  border-radius: 8px;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: var(--cor-primaria);
+  margin-top: 3rem;
+}
+
+.social a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: var(--cor-texto);
+}
+.carousel {
+  width: 100%;
+  max-width: 600px;
+  height: 400px; /* altura fixa */
+  overflow: hidden;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 16px;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  height: 100%;
+}
+
+.carousel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* isso faz a imagem preencher o espaço sem distorcer */
+  flex-shrink: 0;
+}
+
+a svg,
+a img {
+  transition: transform 0.3s ease;
+}
+
+a:hover svg,
+a:hover img {
+  transform: scale(1.2);
+}
+.contato {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  text-align: center;
+  background-color: #f9f9f9; /* ou uma cor da paleta */
+}
+
+.contato h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.contato p {
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+.contato-links {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn-contato {
+  background-color: #000; /* ou cor da paleta */
+  color: white;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.btn-contato:hover {
+  background-color: #444; /* ou uma variação */
+}
+
+@media (min-width: 768px) {
+  .servicos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
