@@ -31,7 +31,7 @@ header {
 }
 
 header nav a {
-  color: #FFF;
+  color: #fff;
 }
 
 header img {
@@ -77,6 +77,10 @@ section {
   margin: 0 auto;
 }
 
+#sobre {
+  background-color: #f9f9f9;
+}
+
 h1 {
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
@@ -100,6 +104,10 @@ footer {
   padding: 2rem;
   background-color: var(--cor-primaria);
   margin-top: 3rem;
+}
+
+footer p {
+  color: #fff;
 }
 
 .social a {
@@ -146,7 +154,7 @@ a:hover img {
   justify-content: center;
   padding: 80px 20px;
   text-align: center;
-  background-color: #f9f9f9; /* ou uma cor da paleta */
+  background-color: #f9f9f9;
 }
 
 .contato h1 {
