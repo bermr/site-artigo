@@ -1,100 +1,98 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Artigo Arquitetura e Design</title>
-  <link href="https://fonts.googleapis.com/css2?family=Aileron:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="assets/logos/redondo.png">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header>
-    <img src="assets/logos/artigo-full.png" alt="Logo Artigo">
-    <nav>
-      <a href="#sobre">Sobre</a>
-      <a href="#portfolio">Portfólio</a>
-      <a href="#servicos">Serviços</a>
-      <a href="#contato">Contato</a>
-    </nav>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Artigo Arquitetura e Design</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Aileron:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="assets/logos/redondo.png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <img src="assets/logos/artigo-p.png" alt="Logo Artigo" />
+      <nav>
+        <a href="#projects">Projetos</a>
+        <a href="#services">Serviços</a>
+        <a href="#architects">Arquitetas</a>
+        <a href="#search">Pesquisar</a>
+      </nav>
+    </header>
 
-  <section id="sobre">
-    <h1>Sobre</h1>
-    <p>A Artigo Arquitetura e Design atua na criação de espaços que equilibram beleza, conforto e identidade. Nosso compromisso é transformar ideias em projetos únicos e bem executados.</p>
-  </section>
+    <section id="projects">
+      <div class="carousel">
+        <div class="carousel-track">
+          <div class="carousel-slide">
+            <img src="assets/portfolio/1.png" class="carousel-image" />
+          </div>
+          <div class="carousel-slide">
+            <img src="assets/portfolio/2.png" class="carousel-image" />
+          </div>
+          <div class="carousel-slide">
+            <img src="assets/portfolio/3.png" class="carousel-image" />
+          </div>
+        </div>
+        <button id="btn-prev" class="arrow-btn">
+          <svg
+            width="50"
+            height="50"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="white"
+            stroke-width="3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+        <button id="btn-next" class="arrow-btn">
+          <svg
+            width="50"
+            height="50"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="white"
+            stroke-width="3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+    </section>
 
-  <section id="portfolio">
-    <h1>Portfólio</h1>
-    <div class="carousel">
-      <div class="carousel-track" id="carousel-track">
-        <img src="assets/portfolio/1.png" alt="Projeto 1">
-        <img src="assets/portfolio/2.jpg" alt="Projeto 2">
-        <img src="assets/portfolio/3.png" alt="Projeto 3">
+    <section id="contato" class="contato">
+      <div class="address">
+        Rua Alfa, nº 2 - Sala 104 - Bauxita - Ouro Preto | Minas Gerais
       </div>
-    </div>
-  </section>
-
-  <section id="servicos">
-    <h1>Serviços</h1>
-    <div class="servicos">
-      <div class="servico">
-        <h3>Interiores Residenciais</h3>
-        <p>Projetos personalizados para transformar o lar em um refúgio de bem-estar e estilo.</p>
-      </div>
-      <div class="servico">
-        <h3>Interiores Comerciais</h3>
-        <p>Espaços pensados para valorizar a experiência do cliente e otimizar o uso.</p>
-      </div>
-      <div class="servico">
-        <h3>Projetos Arquitetônicos</h3>
-        <p>Do conceito à execução, criamos soluções arquitetônicas completas.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="contato" class="contato">
-    <h1>Contato</h1>
-    <p>Entre em contato conosco pelo WhatsApp ou acompanhe nosso trabalho no Instagram.</p>
-    <div class="social">
+      <div class="social">
         <a href="https://wa.me/5531988627286" target="_blank">
-          <img src="assets/icons/whatsapp.svg" alt="Whatsapp" width="32" height="32">
+          <img
+            src="assets/icons/whatsapp.svg"
+            alt="Whatsapp"
+            width="32"
+            height="32"
+          />
         </a>
         <a href="https://instagram.com/artigoarquitetura" target="_blank">
-          <img src="assets/icons/instagram.svg" alt="Instagram" width="32" height="32">
+          <img
+            src="assets/icons/instagram.svg"
+            alt="Instagram"
+            width="32"
+            height="32"
+          />
         </a>
-    </div>
-  </section>
+      </div>
+    </section>
 
-  <footer>
-    <p>&copy; 2025 Artigo Arquitetura e Design</p>
-  </footer>
-
-  <script>
-  const track = document.querySelector('.carousel-track');
-  const slides = document.querySelectorAll('.carousel img');
-  const totalSlides = slides.length;
-  let index = 0;
-  let interval;
-
-  function startCarousel() {
-    interval = setInterval(() => {
-      index = (index + 1) % totalSlides;
-      track.style.transform = `translateX(-${index * 100}%)`;
-    }, 3000);
-  }
-
-  function stopCarousel() {
-    clearInterval(interval);
-  }
-
-  // Inicia o carrossel ao carregar
-  startCarousel();
-
-  // Pausar ao passar o mouse
-  const carousel = document.querySelector('.carousel');
-  carousel.addEventListener('mouseenter', stopCarousel);
-  carousel.addEventListener('mouseleave', startCarousel);
-  </script>
-</body>
+    <footer>
+      <p>&copy; 2025 Artigo Arquitetura e Design</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
 </html>

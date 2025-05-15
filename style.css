@@ -1,8 +1,8 @@
 :root {
-  --cor-primaria: #ab4a37;
+  --cor-primaria: #9e5340;
   --cor-secundaria: #b4b3ae;
   --cor-destaque: #c98d57;
-  --cor-texto: #000000;
+  --cor-texto: #606060;
   --cor-fundo: #ffffff;
 }
 
@@ -12,11 +12,21 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
 body {
   font-family: "Aileron", sans-serif;
   color: var(--cor-texto);
-  background-color: var(--cor-fundo);
   line-height: 1.6;
+  background-image: url("assets/bg.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
 }
 
 header {
@@ -24,18 +34,35 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: var(--cor-primaria);
-  position: sticky;
   top: 0;
-  z-index: 999;
 }
 
 header nav a {
-  color: #fff;
+  color: var(--cor-texto);
 }
 
 header img {
-  height: 80px;
+  margin-left: 20%;
+  height: 60px;
+}
+
+@media (max-width: 768px) {
+  header img {
+    margin-left: 0;
+  }
+}
+
+header nav {
+  margin-right: 20%;
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  header nav {
+    margin-right: 0;
+    display: block;
+  }
 }
 
 nav a {
@@ -45,58 +72,16 @@ nav a {
   font-weight: 500;
 }
 
-.hero {
-  text-align: center;
-  padding: 4rem 2rem;
-}
-
-.hero img {
-  display: block;
-  margin: 0 auto;
-  max-width: 600px;
-}
-
-.hero h1 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.hero a {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.75rem 1.5rem;
-  background-color: var(--cor-destaque);
-  color: var(--cor-fundo);
-  text-decoration: none;
-  border-radius: 4px;
-}
-
 section {
   padding: 3rem 2rem;
-  max-width: 900px;
+  max-width: 80%;
   margin: 0 auto;
-}
-
-#sobre {
-  background-color: #f9f9f9;
 }
 
 h1 {
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
   text-align: center;
-}
-
-.servicos {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-}
-
-.servico {
-  padding: 1.5rem;
-  border: 1px solid var(--cor-secundaria);
-  border-radius: 8px;
 }
 
 footer {
@@ -110,61 +95,80 @@ footer p {
   color: #fff;
 }
 
+#projects {
+  padding-top: 0;
+  max-width: 100%;
+}
+
 .social a {
   margin: 0 1rem;
   text-decoration: none;
   color: var(--cor-texto);
 }
+
 .carousel {
   width: 100%;
-  max-width: 600px;
-  height: 400px; /* altura fixa */
+  height: 100vh;
   overflow: hidden;
-  margin: 0 auto;
   position: relative;
-  border-radius: 16px;
 }
 
 .carousel-track {
   display: flex;
-  transition: transform 0.5s ease-in-out;
+  transition: transform 1.5s ease-in-out;
   height: 100%;
 }
 
-.carousel img {
+.carousel-slide {
+  flex: 0 0 100%;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  aspect-ratio: 1 / 1;
+}
+
+.carousel-image {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* isso faz a imagem preencher o espaço sem distorcer */
-  flex-shrink: 0;
+  object-fit: cover;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
-a svg,
-a img {
-  transition: transform 0.3s ease;
+.arrow-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  user-select: none;
 }
 
-a:hover svg,
-a:hover img {
-  transform: scale(1.2);
+#btn-prev {
+  left: 10px;
 }
+
+#btn-next {
+  right: 10px;
+}
+
 .contato {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 80px 20px;
   text-align: center;
-  background-color: #f9f9f9;
+  justify-content: space-between;
 }
 
-.contato h1 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-}
-
-.contato p {
-  margin-bottom: 20px;
+.contato .address {
+  margin-left: 0;
   font-size: 1rem;
+}
+
+.contato .social {
+  margin-right: 0;
 }
 
 .contato-links {
@@ -175,7 +179,7 @@ a:hover img {
 }
 
 .btn-contato {
-  background-color: #000; /* ou cor da paleta */
+  background-color: #000;
   color: white;
   text-decoration: none;
   padding: 12px 24px;
@@ -185,7 +189,17 @@ a:hover img {
 }
 
 .btn-contato:hover {
-  background-color: #444; /* ou uma variação */
+  background-color: #444;
+}
+
+a svg,
+a img {
+  transition: transform 0.3s ease;
+}
+
+a:hover svg,
+a:hover img {
+  transform: scale(1.2);
 }
 
 @media (min-width: 768px) {
