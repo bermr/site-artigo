@@ -4,21 +4,74 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Artigo Arquitetura e Design</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Aileron:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Aileron:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="icon" type="image/png" href="assets/logos/redondo.png" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header>
       <img src="assets/logos/artigo-p.png" alt="Logo Artigo" />
+      <button class="menu-toggle" aria-label="Abrir menu">☰</button>
       <nav>
-        <a href="#projects">Projetos</a>
-        <a href="#services">Serviços</a>
-        <a href="#architects">Arquitetas</a>
-        <a href="#search">Pesquisar</a>
+        <ul class="navbar">
+          <!-- PROJETOS -->
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle">Projetos</a>
+            <div class="dropdown-multi-column">
+              <div class="column">
+                <strong>Comercial</strong>
+                <ul>
+                  <li><a href="#">Loja de calçados - US</a></li>
+                  <li><a href="#">Loja de roupas - MB</a></li>
+                  <li><a href="#">Loja de roupas - EV</a></li>
+                </ul>
+              </div>
+              <div class="column">
+                <strong>Residencial</strong>
+                <ul>
+                  <li><a href="#">Sala de estar - FL</a></li>
+                  <li><a href="#">Sala de jantar - FL</a></li>
+                  <li><a href="#">Cozinha - FL</a></li>
+                </ul>
+              </div>
+              <div class="column">
+                <strong>Corporativos</strong>
+                <ul>
+                  <li><a href="#">Escritório de advocacia - VS</a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+
+          <!-- SERVIÇOS -->
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle">Serviços</a>
+            <div class="dropdown-multi-column">
+              <div class="column">
+                <strong>Projetos</strong>
+                <ul>
+                  <li><a href="#">Design de interiores</a></li>
+                  <li><a href="#">Reforma em arquitetura</a></li>
+                  <li><a href="#">Detalhamento marcenaria</a></li>
+                  <li><a href="#">Luminotécnico</a></li>
+                </ul>
+              </div>
+              <div class="column">
+                <strong>Consultoria</strong>
+                <ul>
+                  <li><a href="#">Design de interiores</a></li>
+                  <li><a href="#">Orientação técnica</a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+
+          <!-- ARQUITETAS -->
+          <li><a href="#">Arquitetas</a></li>
+
+          <!-- PESQUISA -->
+          <li><a href="#">Pesquisa</a></li>
+        </ul>
       </nav>
     </header>
 
@@ -26,66 +79,36 @@
       <div class="carousel">
         <div class="carousel-track">
           <div class="carousel-slide">
-            <img src="assets/portfolio/1.png" class="carousel-image" />
+            <img src="assets/carousel/1.png" class="carousel-image" />
           </div>
           <div class="carousel-slide">
-            <img src="assets/portfolio/2.png" class="carousel-image" />
+            <img src="assets/carousel/2.png" class="carousel-image" />
           </div>
           <div class="carousel-slide">
-            <img src="assets/portfolio/3.png" class="carousel-image" />
+            <img src="assets/carousel/3.png" class="carousel-image" />
           </div>
         </div>
         <button id="btn-prev" class="arrow-btn">
-          <svg
-            width="50"
-            height="50"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="white"
-            stroke-width="3"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
+          <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="15 18 9 12 15 6"></polyline>
           </svg>
         </button>
         <button id="btn-next" class="arrow-btn">
-          <svg
-            width="50"
-            height="50"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="white"
-            stroke-width="3"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
+          <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="9 18 15 12 9 6"></polyline>
           </svg>
         </button>
       </div>
     </section>
 
-    <section id="contato" class="contato">
-      <div class="address">
-        Rua Alfa, nº 2 - Sala 104 - Bauxita - Ouro Preto | Minas Gerais
-      </div>
+    <section class="contact">
+      <div class="address">Rua Alfa, nº 2 - Sala 104 - Bauxita - Ouro Preto | Minas Gerais</div>
       <div class="social">
         <a href="https://wa.me/5531988627286" target="_blank">
-          <img
-            src="assets/icons/whatsapp.svg"
-            alt="Whatsapp"
-            width="32"
-            height="32"
-          />
+          <img src="assets/icons/whatsapp.svg" alt="Whatsapp" width="32" height="32" />
         </a>
         <a href="https://instagram.com/artigoarquitetura" target="_blank">
-          <img
-            src="assets/icons/instagram.svg"
-            alt="Instagram"
-            width="32"
-            height="32"
-          />
+          <img src="assets/icons/instagram.svg" alt="Instagram" width="32" height="32" />
         </a>
       </div>
     </section>
@@ -93,6 +116,7 @@
     <footer>
       <p>&copy; 2025 Artigo Arquitetura e Design</p>
     </footer>
-    <script src="script.js"></script>
+    <script src="scripts/carousel.js"></script>
+    <script src="scripts/dropdowns.js"></script>
   </body>
 </html>
