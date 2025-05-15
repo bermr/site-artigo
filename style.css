@@ -42,7 +42,7 @@ header nav a {
 
 header img {
   margin-left: 20%;
-  height: 60px;
+  height: 80px;
 }
 
 @media (max-width: 768px) {
@@ -58,7 +58,6 @@ header nav {
 }
 
 nav a {
-  margin-left: 1.5rem;
   text-decoration: none;
   color: var(--cor-texto);
   font-weight: 500;
@@ -91,9 +90,8 @@ ul.navbar > li {
 .dropdown-multi-column {
   position: absolute;
   top: 100%;
-  left: 0;
-  min-width: 300px;
-  max-width: 800px;
+  left: -250px;
+  width: 800px;
   background-color: #fff;
   padding: 20px 30px;
   border-radius: 4px;
@@ -133,8 +131,9 @@ ul.navbar > li {
 }
 
 .dropdown-multi-column ul {
+  list-style-position: inside;
   list-style: none;
-  padding: 0;
+  padding-left: 0;
   margin: 0;
 }
 
@@ -186,16 +185,23 @@ ul.navbar > li {
   }
 
   ul.navbar {
-    display: none;
+    position: fixed;
     flex-direction: column;
-    gap: 20px;
-    width: 100%;
-    background: #fff;
-    padding: 10px 0;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 220px;
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
   }
 
   ul.navbar.active {
     display: flex;
+    transform: translateX(0);
   }
 
   .dropdown-multi-column {
@@ -272,6 +278,24 @@ footer p {
   position: relative;
 }
 
+@media (max-width: 1200px) {
+  .carousel {
+    height: 80vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel {
+    height: 60vh;
+  }
+}
+
+@media (max-width: 500px) {
+  .carousel {
+    height: 40vh;
+  }
+}
+
 .carousel-track {
   display: flex;
   transition: transform 1.5s ease-in-out;
@@ -288,8 +312,9 @@ footer p {
 }
 
 .carousel-image {
+  display: block;
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
